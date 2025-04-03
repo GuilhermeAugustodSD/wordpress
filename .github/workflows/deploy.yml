@@ -21,5 +21,9 @@ jobs:
         username: ${{ secrets.VPS_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
+          echo "Iniciando deploy no servidor..."
           cd ${{ secrets.DEPLOY_DIR }}
-          git pull origin main
+          echo "Entrou no diretório do projeto."
+          git fetch origin
+          git reset --hard origin/main
+          echo "Pull feito com sucesso!"
