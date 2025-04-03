@@ -7,3 +7,4 @@ wp-config-local.php
 *.log
 *.sql
 *.zip
+docker-compose.yml
