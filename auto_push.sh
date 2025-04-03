@@ -2,6 +2,8 @@
 
 cd /var/lib/docker/volumes/bia_wordpress_data/_data
 
+git pull origin main
+
 # Adiciona arquivos novos e modificados
 git add .
 
