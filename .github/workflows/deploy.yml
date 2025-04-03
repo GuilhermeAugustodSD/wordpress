@@ -11,19 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Deploy via SSH
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.VPS_HOST }}
-        username: ${{ secrets.VPS_USER }}
-        key: ${{ secrets.SSH_KEY }}
-        script: |
-          echo "Iniciando deploy no servidor..."
-          cd ${{ secrets.DEPLOY_DIR }}
-          echo "Entrou no diretório do projeto."
-          git fetch origin
-          git reset --hard origin/main
-          echo "Pull feito com sucesso!"
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            echo "Iniciando deploy no servidor..."
+            cd ${{ secrets.DEPLOY_DIR }}
+            echo "Entrou no diretório do projeto."
+            bash /var/lib/docker/volumes/bia_wordpress_data/_data/auto_push.sh
+            git fetch origin
+            git reset --hard origin/main
+            echo "Pull feito com sucesso!"

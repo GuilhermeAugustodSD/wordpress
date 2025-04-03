@@ -191,7 +191,7 @@ function registrar_cpt_atuacao()
   $labels = array(
     'name'                  => _x('Áreas de Atuação', 'Post Type General Name', 'text_domain'),
     'singular_name'         => _x('Área de Atuação', 'Post Type Singular Name', 'text_domain'),
-    'menu_name'             => __('Áreas de Atuação 2', 'text_domain'),
+    'menu_name'             => __('Áreas de Atuação', 'text_domain'),
     'name_admin_bar'        => __('Área de Atuação', 'text_domain'),
     'archives'              => __('Arquivo de Áreas de Atuação', 'text_domain'),
     'attributes'            => __('Atributos de Área de Atuação', 'text_domain'),
